@@ -1,0 +1,179 @@
+.navbar{
+  height: @navbar-height-expanded;
+  @media only screen and (max-width: 600px){
+    height: @navbar-height-expanded + 36px;
+  }
+  transition: height @navbar-transition-time;
+  border-bottom: 1px solid @light-grey;
+  .back-nav{
+    background-color: @white;
+    transition: opacity @navbar-transition-time;
+    opacity: 0.4;
+  }
+  .navbar-brand{
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    width: 1000px;
+    padding: 0px;
+  }
+  #nav-logo{
+    position: relative;
+    display: inline-block;
+    top: 0px;
+    left: 0px;
+    height: @navbar-height-expanded;
+    transition: height @navbar-transition-time;
+  }
+  .nav-e{
+    font-weight: 500;
+    font-size: 20px;
+    color: @light-green;
+  }
+  .nav-i{
+    font-weight: 500;
+    font-size: 24px;
+    color: @orange;
+  }
+  .nav-b{
+    font-size: 14px;
+    color: @black;
+  }
+  .logo-text{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    transition: top @navbar-transition-time, left @navbar-transition-time, font-size @navbar-transition-time;
+
+  }
+  &:not(.scrolled){
+    .logo-text{
+      &.nav-e{
+        font-size: 24px;
+        top: -15px;
+        left: 15px;
+      }
+      &.nav-i{
+        font-size: 32px;
+        top: 5px;
+        left: -85px;
+      }
+      &.nav-b{
+        font-size: 14px;
+        top: 18px;
+        left: -185px;   
+      }
+    }
+  }
+
+  .menu-toggle{
+    width: 35px;
+    height: 32px;
+    padding: 5px 5px 0px 5px;
+    background-color: transparent;
+    border: 1px solid @light-green;
+    .icon-bar{
+      display: block;
+      position: relative;
+      border: 1px solid @light-green;
+      border-radius: @button-radius;
+      transition: width @navbar-transition-time, margin-left @navbar-transition-time;
+      width: 100%;
+      height: 3px;
+      margin-bottom: 6px;
+      &.menu-label{
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        line-height: 3px;
+        font-size: 8px;
+        text-align: center;
+      }
+    }
+    &:hover{
+      .icon-bar{
+        width: 15%;
+        &:nth-of-type(1), &:nth-of-type(3){
+          margin-left: 85%;
+        }
+      }
+
+    }
+  }
+  li > a {
+    padding: @button-padding;
+    margin: 15px 5px 0px 0px;
+  }
+  .navbar-right{
+    padding-right: 15px;
+    @media only screen and (max-width: 600px){
+      transition: margin-top @navbar-transition-time;
+      width: 100vw;
+      background-color: transparent;
+      margin-top: @navbar-height-expanded;
+      padding: 2px 0px 2px 75px; 
+      *{
+        margin-top: 0px;
+      }
+    }
+  }
+
+  .navbar-menu{
+    position: absolute;
+    top: @navbar-height-expanded;
+    @media only screen and (max-width: 600px){
+      top: @navbar-height-expanded + 36px;
+    }
+    transition: all @navbar-transition-time;
+    right: 15px;
+
+    .menu-items{
+      list-style: none;
+      li{
+        background-color: @white;
+        .responsive-font-size(26px, 20px, 16px);
+        .responsive-padding(7px, 5px, 3px);
+        text-align: right;
+        border: 1px solid @light-grey;
+        transition: all @navbar-transition-time;
+        &:hover{
+          background-color: @light-grey;
+          cursor: pointer;
+          margin-left: -10px;
+          a{
+            color: @dark-green;
+          }
+        }
+        a:hover, a:active{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &.scrolled{
+    height: @navbar-height-collapsed;
+    .back-nav{
+      opacity: 1;
+    }
+    #nav-logo{
+      height: @navbar-height-collapsed;
+    }
+    .logo-text{
+      .mobile({
+        display: none;
+      })
+    }
+    .navbar-right{
+      @media only screen and (max-width: 600px) and (min-width: 400px) {
+        margin-top: @navbar-height-collapsed;
+      }
+      .mobile({
+        margin-top: 15px;
+      });
+    }
+    .navbar-menu{
+      top: @navbar-height-collapsed;
+    }
+  }
+}

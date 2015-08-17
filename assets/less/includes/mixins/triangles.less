@@ -1,0 +1,58 @@
+.pyramid-up(@color, @width, @height ){
+	width: 0; 
+	height: 0; 
+	border-left: (@width/2) solid transparent;
+	border-right: (@width/2) solid transparent;
+	border-bottom: @height solid @color;
+}
+.pyramid-down(@color, @width, @height ){
+	width: 0; 
+	height: 0; 
+	border-left: (@width/2) solid transparent;
+	border-right: (@width/2) solid transparent;
+	border-top: @height solid @color;
+}
+.pyramid-left(@color, @width, @height ){
+	width: 0; 
+	height: 0; 
+	border-top: (@height/2) solid transparent;
+	border-bottom: (@height/2) solid transparent;
+	border-right: @width solid @color;
+}
+.pyramid-right(@color, @width, @height ){
+	width: 0; 
+	height: 0; 
+	border-top: (@height/2) solid transparent;
+	border-bottom: (@height/2) solid transparent;
+	border-left: @width solid @color;
+}
+
+.pythag-points-dl(@color, @width, @height ){
+	width: 0; 
+	height: 0; 
+	border-left: 0px solid transparent;
+	border-right: @width solid transparent;
+	border-bottom: @height solid @color;
+}
+.pythag-points-ul(@color, @width, @height ){
+	width: 0; 
+	height: 0; 
+	border-left: 0px solid transparent;
+	border-right: @width solid transparent;
+	border-top: @height solid @color;
+}
+.pythag-points-dr(@color, @width, @height ){
+	width: 0; 
+	height: 0; 
+	border-right: 0px solid transparent;
+	border-left: @width solid transparent;
+	border-bottom: @height solid @color;
+}
+.pythag-points-ur(@color, @width, @height ){
+	width: 0; 
+	height: 0; 
+	border-right: 0px solid transparent;
+	border-left: @width solid transparent;
+	border-top: @height solid @color;
+}
+

@@ -1,0 +1,49 @@
+@individual-time: 4s;
+@number-of-items: 6;
+
+@total-time: @individual-time * @number-of-items;
+
+@keyframes ride {
+	0%{transform: rotate(0deg); opacity: 1;}
+	10%{transform: rotate(0deg); opacity: 1;}
+	15%{transform: rotate(50deg); opacity: 0;}
+	95%{transform: rotate(-50deg); opacity: 0;}
+	100%{transform: rotate(0deg); opacity: 1;}
+}
+
+.ferris-wheel{
+	position: relative;
+	width: 400px;
+	height: 400px;
+	.tablet({
+		width: 300px;
+		height: 300px;
+	});
+	.mobile({
+		width: 200px;
+		height: 200px;
+	});
+
+
+	margin: auto;
+	.cabin{
+		position: absolute;
+		z-index: 10;
+		top: 0px;
+		left: 0px;
+		transform-origin: -100px center;
+		.mobile({
+			transform-origin: center 300px;
+		});
+		.tablet({
+			transform-origin: center 300px;
+		});
+		animation: ride @total-time cubic-bezier(0.22,0,0.82,0.99) infinite;
+		&:nth-of-type(1){animation-delay: @individual-time * -1;}
+		&:nth-of-type(2){animation-delay: @individual-time * -2;}
+		&:nth-of-type(3){animation-delay: @individual-time * -3;}
+		&:nth-of-type(4){animation-delay: @individual-time * -4;}
+		&:nth-of-type(5){animation-delay: @individual-time * -5;}
+		&:nth-of-type(6){animation-delay: @individual-time * -6;}
+	}
+}

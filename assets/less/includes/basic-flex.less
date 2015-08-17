@@ -1,0 +1,43 @@
+  //container
+  .flexbox {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .flex-center{
+    -webkit-align-items: center;
+    -webkit-align-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .mobile-reverse{
+    .mobile({
+      flex-direction: column-reverse;
+    });
+  }
+  .tablet-reverse{
+    .tablet({
+      flex-direction: column-reverse;
+    });
+  }
+
+  //children
+  
+  .content-wrap{
+    margin: auto;
+  }
+  .content-center{
+    text-align: center;
+  }
+
+  .flex--1{
+    .responsive-flex(1);
+  }
+  .flex--2{
+    .responsive-flex(2);
+  }
+  .flex--3{
+    .responsive-flex(3);
+  }
