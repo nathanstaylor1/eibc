@@ -30,6 +30,8 @@ a{
 
 section{
   position: relative;
+  overflow: hidden;
+  transition: all @show-transition-time;
 }
 
 @import 'sections/navbar.less';
@@ -55,7 +57,7 @@ section{
 }
 
 .translucent {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .back-white{
   background-color: @white;
@@ -96,21 +98,9 @@ section{
   color: @black;
 }
 
-.top-left-tab{
-  position: absolute;
-  top: 0;
-  left: 0;
-  .pythag-points-ul(@dark-grey, 200px, 100px);  
-}
-.top-right-tab{
-  position: absolute;
-  top: 0;
-  right: 0;
-  .pythag-points-ur(@dark-grey, 200px, 100px);  
-}
-
 .content-wrap{
   .responsive-padding(30px, 20px, 10px);
+  text-align: center;
 }
 
 .flexbox > div{
@@ -123,12 +113,22 @@ section{
   z-index: 100;
 }
 
+.text-left{
+  text-align: left;
+}
+
 .btn {
   padding: @button-padding;
   border-radius: @button-radius;
   transition: all @button-transition-time;
   font-weight: 500;
+  text-align: center;
   .responsive-font-size(20px, 16px, 14px);
+  &.btn-large{
+    .responsive-font-size(30px, 20px, 16px);
+    .responsive-padding(30px, 20px, 10px)
+  }
+
   &.btn-normal{
     border: 1px solid @light-green;
     color: @light-green;
@@ -160,24 +160,62 @@ section{
   width: 100%;
   background-size: cover;
   background-position: center center;
-  border-radius: @postcard-radius;
   .responsive-min-height(300px, 250px, 150px);
 }
-.image-caption{
+
+.clear-small{
+  width: 100%;
+  height: 30px;
 }
+
+.clear-large{
+  width: 100%;
+  height: 80px;
+}
+
 .circle-image{
+  position: relative;
   border-radius: 200px;
   border: 2px @white solid;
   width: 400px;
   height: 400px;
+  font-size: 200px;
   .tablet({
     width: 300px;
     height: 300px;
+    font-size: 150px;
   });
   .mobile({
     width: 200px;
     height: 200px;
+    font-size: 100px;
   });
+
+  display: flex;
+
+  .content-wrap{
+    flex: 1;
+    text-align: center;
+    margin: auto;
+    z-index: 100;
+    *{
+      position: relative;
+      z-index: 100;
+    }
+  }
+
+  &::before{
+    content: "";
+    background-color: @black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0.2;
+    border-radius: 1000px;
+  }
 }
 
 //fonts
@@ -191,9 +229,26 @@ section{
 .subheading{
   .responsive-font-size(24px, 20px, 16px); 
 }
+.larger-text{
+  .responsive-font-size(18px, 16px, 14px);
+  text-align: left;
+}
 .default-text{
   .responsive-font-size(16px, 14px, 12px); 
+  text-align: left;
 }
 
 //Section Styling
+
+#mailing-form{
+  .responsive-font-size(18px, 16px, 14px);
+  input, .btn{
+    vertical-align: top;
+  }
+  input{
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid @light-green;
+  }
+}
 

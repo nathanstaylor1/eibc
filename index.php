@@ -1,13 +1,14 @@
 <?php include 'global/nav.php' ?>
 
-<section id="header" class="full-height flexbox">
+<canvas id ="dot-animation" width="2000" height="2000"></canvas>
+
+<section id="header" class="full-height flexbox flex-center">
 	<?php include 'content/landing/header.html.php' ?>
 </section>
 
 <div class="slope slope-about translucent"></div>
 
 <section id="about" class="full-height flexbox flex-center">
-
 	<div class="back-fill back-light-green translucent"></div>
 	<?php include 'content/landing/about.html.php' ?>
 </section>

@@ -1,0 +1,12 @@
+@show-transition-time: 1s;
+
+.active-show-hide{
+	overflow: hidden;
+	transition: all @show-transition-time;
+	max-height: 100%;
+	opacity: 1;
+	&.h{
+		max-height: 0px;
+		opacity: 0;
+	}
+}

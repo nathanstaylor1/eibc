@@ -12,6 +12,10 @@
     align-content: center;
   }
 
+  .flex-column{
+    flex-direction: column;
+  }
+
   .mobile-reverse{
     .mobile({
       flex-direction: column-reverse;
@@ -30,6 +34,7 @@
   }
   .content-center{
     text-align: center;
+    margin: auto;
   }
 
   .flex--1{
@@ -40,4 +45,8 @@
   }
   .flex--3{
     .responsive-flex(3);
+  }
+
+  .flex-small--1{
+    .smaller-responsive-flex(1);
   }

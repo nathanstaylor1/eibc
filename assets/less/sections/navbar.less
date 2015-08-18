@@ -160,17 +160,14 @@
       height: @navbar-height-collapsed;
     }
     .logo-text{
-      .mobile({
+      @media only screen and (max-width: 600px){
         display: none;
-      })
+      }
     }
     .navbar-right{
-      @media only screen and (max-width: 600px) and (min-width: 400px) {
-        margin-top: @navbar-height-collapsed;
-      }
-      .mobile({
+      @media only screen and (max-width: 600px) {
         margin-top: 15px;
-      });
+      }
     }
     .navbar-menu{
       top: @navbar-height-collapsed;

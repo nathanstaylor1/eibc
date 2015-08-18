@@ -1,0 +1,56 @@
+@icon-animation-time: 500ms;
+
+.responsive-icon(@flex){
+  min-width: 300px;
+  -webkit-flex: @flex 1 300px;
+  flex: @flex;
+  .tablet({
+      min-width: 250px;
+      -webkit-flex: @flex 1 250px;
+      flex: @flex;
+    });
+  .mobile({
+      min-width: 220px;
+      -webkit-flex: @flex 1 220px;
+      flex: @flex;
+    });
+}
+
+@keyframes wiggle{
+	0%{	transform: rotate(0deg);}
+	30%{	transform: rotate(-15deg);}
+	80%{	transform: rotate(10deg);}
+	100%{ transform: rotate(0deg);}
+}
+
+.icon-board{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+	.icon-wrap{
+		.responsive-icon(1);
+		.responsive-padding(20px, 50px, 15px);
+
+		.icon{
+			.responsive-font-size(50px, 40px, 30px);
+			.responsive-padding(50px, 40px, 30px);
+			.responsive-width(150px, 120px, 90px);
+			.responsive-height(150px, 120px, 90px);
+			background-color: @white;
+			border-radius: 10000px;
+
+			&:hover{
+				animation: wiggle @icon-animation-time;
+			}
+
+		}
+		.icon-heading{
+			.responsive-font-size(26px, 20px, 16px);
+		}
+		.icon-text{
+
+		}
+	}
+}
