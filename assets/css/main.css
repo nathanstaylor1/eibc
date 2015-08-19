@@ -514,7 +514,6 @@ html {
   min-height: 100%;
 }
 body {
-  margin-bottom: 300px;
   background-color: #ffffff;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -530,10 +529,35 @@ a {
 a:hover {
   color: #076532;
 }
+b {
+  color: #f07d00;
+}
 section {
   position: relative;
   overflow: hidden;
   transition: all 1s;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  vertical-align: middle;
+}
+table tr {
+  height: 50px;
+}
+table tr td,
+table tr th {
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background-color: #ffffff;
+  color: #3aaa34;
+}
+table,
+td,
+th {
+  border: 1px solid #ffffff;
 }
 .navbar {
   height: 120px;
@@ -728,10 +752,8 @@ section {
   top: 60px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
-  height: 300px;
   background-color: transparent;
 }
 .footer .small-print {
@@ -838,6 +860,9 @@ section {
 .text-left {
   text-align: left;
 }
+.text-right {
+  text-align: right;
+}
 .btn {
   padding: 5px 10px 5px 10px;
   border-radius: 5px;
@@ -905,6 +930,15 @@ section {
   background-color: #ffffff;
   color: #76b729;
 }
+.btn.btn-outline-white {
+  border: 1px solid #ffffff;
+}
+.btn.btn-no-border {
+  border: none;
+}
+.btn.btn-no-border:hover {
+  border: none;
+}
 .back-image {
   width: 100%;
   background-size: cover;
@@ -953,10 +987,12 @@ section {
   }
 }
 .circle-image .content-wrap {
+  transition: all 600ms;
   flex: 1;
   text-align: center;
   margin: auto;
   z-index: 100;
+  opacity: 0;
 }
 .circle-image .content-wrap * {
   position: relative;
@@ -964,15 +1000,22 @@ section {
 }
 .circle-image::before {
   content: "";
-  background-color: #000000;
+  transition: all 500ms;
+  background-color: #ffffff;
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
   height: 100%;
   z-index: 10;
-  opacity: 0.2;
+  opacity: 0;
   border-radius: 1000px;
+}
+.circle-image:hover::before {
+  opacity: 1;
+}
+.circle-image:hover .content-wrap {
+  opacity: 1;
 }
 .tagline {
   font-size: 80px;
@@ -1062,4 +1105,34 @@ section {
   padding: 4px;
   border-radius: 5px;
   border: 1px solid #76b729;
+}
+.contact-details > span {
+  display: block;
+  font-size: 18px;
+}
+@media only screen and (max-width: 1000px) {
+  .contact-details > span {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .contact-details > span {
+    font-size: 14px;
+  }
+}
+.social-media a {
+  margin-right: 10px;
+  text-align: center;
+}
+.social-media a i {
+  transition: all 300ms;
+  background-color: #76b729;
+  color: #ffffff;
+  width: 40px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 1000px;
+}
+.social-media a:hover i {
+  background-color: #076532;
 }

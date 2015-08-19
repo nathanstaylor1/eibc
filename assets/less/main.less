@@ -9,7 +9,6 @@ html{
 }
 
 body{
-	margin-bottom: @footer-height;
 	background-color: @body-background;
   font-family: @logo-font;
 }
@@ -28,10 +27,39 @@ a{
   }
 }
 
+b{
+  color: @orange;
+}
 section{
   position: relative;
   overflow: hidden;
   transition: all @show-transition-time;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  vertical-align: middle;
+    tr{
+      height: 50px;
+      td, th{
+        padding: 10px;
+        text-align: center;
+      }
+  }
+}
+
+th{
+  background-color: @white;
+  color: @medium-green;
+}
+
+td{
+
+}
+
+table, td, th {
+    border: 1px solid @white;
 }
 
 @import 'sections/navbar.less';
@@ -117,6 +145,10 @@ section{
   text-align: left;
 }
 
+.text-right{
+  text-align: right;
+}
+
 .btn {
   padding: @button-padding;
   border-radius: @button-radius;
@@ -154,6 +186,15 @@ section{
       color: @light-green;
     }
   }
+  &.btn-outline-white{
+    border: 1px solid @white;
+  };
+  &.btn-no-border{
+    border: none;
+    &:hover{
+      border:none;
+    }
+  };
 }
 
 .back-image{
@@ -194,10 +235,12 @@ section{
   display: flex;
 
   .content-wrap{
+    transition: all 600ms;
     flex: 1;
     text-align: center;
     margin: auto;
     z-index: 100;
+    opacity: 0;
     *{
       position: relative;
       z-index: 100;
@@ -206,15 +249,25 @@ section{
 
   &::before{
     content: "";
-    background-color: @black;
+    transition: all 500ms;
+    background-color: @white;
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100%;
     z-index: 10;
-    opacity: 0.2;
+    opacity: 0;
     border-radius: 1000px;
+  }
+
+  &:hover{
+    &::before{
+      opacity: 1;
+    }
+    .content-wrap{
+      opacity: 1;
+    }
   }
 }
 
@@ -240,6 +293,8 @@ section{
 
 //Section Styling
 
+
+
 #mailing-form{
   .responsive-font-size(18px, 16px, 14px);
   input, .btn{
@@ -251,4 +306,34 @@ section{
     border: 1px solid @light-green;
   }
 }
+
+.contact-details{
+  & > span{
+    display: block;
+    .responsive-font-size(18px, 16px, 14px);
+  }
+}
+
+
+.social-media{
+  a{
+    margin-right: 10px;
+    text-align: center;
+    i{
+      transition: all 300ms;
+      background-color: @light-green;
+      color: @white;
+      width: 40px;
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 1000px;
+    }
+    &:hover{
+      i{
+        background-color: @dark-green;
+      }
+    }
+  }
+}
+
 

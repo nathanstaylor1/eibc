@@ -7,6 +7,14 @@
 			<div class="clear-small"></div>
 			<div class="image-mood-board">
 				<div class="mood-piece">
+					<div class="back" id="facilities-image-6"></div>
+					<div class="content">
+						<div class="content-wrap">
+							<p class="larger-text">EIBC at dusk</p>
+						</div>
+					</div>
+				</div>
+				<div class="mood-piece">
 					<div class="back" id="facilities-image-1"></div>
 					<div class="content">
 						<div class="content-wrap">
@@ -46,14 +54,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="mood-piece">
-					<div class="back" id="facilities-image-6"></div>
-					<div class="content">
-						<div class="content-wrap">
-							<p class="larger-text">EIBC at dusk</p>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="clear-small"></div>
 			<div class="active-show-hide h postcard back-dark-grey facilities-information">
@@ -80,7 +80,7 @@
 				<h2 class="section-heading">Research at EIBC</h2>
 				<div class="flexbox">
 					<div class="flex--1">
-						<h4 class="subheading">Dry Lab</h4>
+						<h4 class="subheading">Dry Labs</h4>
 						<p class="default-text">
 							The EIBC is designed with innovators in mind, especially in the technological domain. The building is fully networked, with high speed fibre, cloud collaboration, video conferencing, advanced security and presentation facilities.
 							<br><br>
