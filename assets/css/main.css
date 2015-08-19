@@ -1084,6 +1084,23 @@ th {
     font-size: 12px;
   }
 }
+.benefits-list {
+  list-style: none;
+}
+.benefits-list li::before {
+  font-family: 'FontAwesome';
+  margin: 0 10px 0 -30px;
+  color: #f07d00;
+}
+.benefits-list li:nth-of-type(1)::before {
+  content: '\f084';
+}
+.benefits-list li:nth-of-type(2)::before {
+  content: '\f000';
+}
+.benefits-list li:nth-of-type(3)::before {
+  content: '\f040';
+}
 #mailing-form {
   font-size: 18px;
 }

@@ -8,12 +8,12 @@
 		</div>
 		<div class="flex--1 postcard back-light-grey">
 			<h2 class="subheading">Benefits</h2>
-			<ul>
-				<li class="larger-text"> et accusamus et iusto odio mus et iusto odio mus et iusto odio dignissimodignissimodignissimos </li>
+			<ul class="benefits-list">
+				<li class="larger-text"></i>Access to Meeting Rooms and Co-Working Spaces </li>
 				<div class="clear-small"></div>
-				<li class="larger-text"> et accumus et iusto odio dignissim et iusto odio dignissimos </li>
+				<li class="larger-text"> Subscription to Database for Event Invitations </li>
 				<div class="clear-small"></div>
-				<li class="larger-text"> et accusamo dignissimoiusto odio dignissimos </li>
+				<li class="larger-text"> Access to Mentoring Boards and EIBC resources </li>
 
 			</ul>
 		</div>

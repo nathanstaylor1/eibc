@@ -293,6 +293,24 @@ table, td, th {
 
 //Section Styling
 
+.benefits-list{
+  list-style: none;
+
+  li::before {    
+    font-family: 'FontAwesome';
+    margin:0 10px 0 -30px;
+    color: @orange;
+  }
+  li:nth-of-type(1)::before{
+    content: '\f084';
+  }
+  li:nth-of-type(2)::before{
+    content: '\f000';
+  }
+  li:nth-of-type(3)::before{
+    content: '\f040';
+  }
+}
 
 
 #mailing-form{
