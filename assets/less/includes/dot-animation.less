@@ -1,6 +1,12 @@
 canvas#dot-animation{
+	cursor: grab;
 	position: fixed;
+	top: 0px;
+	left: 0px;
 	width: 100vmax;
 	height: 100vmax;
-	z-index: -1000;
+	z-index: 1;
+	&.dragging{
+		cursor: grabbing;
+	}
 }

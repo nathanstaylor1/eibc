@@ -116,14 +116,20 @@
   float: right!important;
 }
 canvas#dot-animation {
+  cursor: grab;
   position: fixed;
+  top: 0px;
+  left: 0px;
   width: 100vmax;
   height: 100vmax;
-  z-index: -1000;
+  z-index: 1;
+}
+canvas#dot-animation.dragging {
+  cursor: grabbing;
 }
 .slope {
   position: relative;
-  z-index: -100;
+  z-index: 3;
   width: 0;
   height: 0;
   border-right: 0px solid transparent;
@@ -534,6 +540,7 @@ b {
 }
 section {
   position: relative;
+  z-index: 2;
   overflow: hidden;
   transition: all 1s;
 }
@@ -560,6 +567,7 @@ th {
   border: 1px solid #ffffff;
 }
 .navbar {
+  pointer-events: none;
   height: 120px;
   transition: height 300ms;
   border-bottom: 1px solid #dddddd;
@@ -569,7 +577,13 @@ th {
     height: 156px;
   }
 }
+.navbar .navbar-brand,
+.navbar .navbar-right,
+.navbar .navbar-menu {
+  pointer-events: auto;
+}
 .navbar .back-nav {
+  pointer-events: none;
   background-color: #ffffff;
   transition: opacity 300ms;
   opacity: 0.4;
@@ -753,6 +767,7 @@ th {
 }
 .footer {
   position: relative;
+  z-index: 2;
   width: 100%;
   background-color: transparent;
 }
@@ -775,7 +790,7 @@ th {
   z-index: -100;
 }
 .translucent {
-  opacity: 0.9;
+  opacity: 0.7;
 }
 .back-white {
   background-color: #ffffff;
@@ -1083,6 +1098,9 @@ th {
   .default-text {
     font-size: 12px;
   }
+}
+#header {
+  pointer-events: none;
 }
 .benefits-list {
   list-style: none;

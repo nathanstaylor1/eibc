@@ -32,6 +32,7 @@ b{
 }
 section{
   position: relative;
+  z-index: 2;
   overflow: hidden;
   transition: all @show-transition-time;
 }
@@ -85,7 +86,7 @@ table, td, th {
 }
 
 .translucent {
-  opacity: 0.9;
+  opacity: 0.7;
 }
 .back-white{
   background-color: @white;
@@ -292,6 +293,10 @@ table, td, th {
 }
 
 //Section Styling
+
+#header{
+  pointer-events: none;
+}
 
 .benefits-list{
   list-style: none;

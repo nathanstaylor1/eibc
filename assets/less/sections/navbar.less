@@ -1,11 +1,18 @@
 .navbar{
+  pointer-events: none;
   height: @navbar-height-expanded;
   @media only screen and (max-width: 600px){
     height: @navbar-height-expanded + 36px;
   }
   transition: height @navbar-transition-time;
   border-bottom: 1px solid @light-grey;
+
+  .navbar-brand, .navbar-right, .navbar-menu{
+    pointer-events: auto;
+  }
+
   .back-nav{
+    pointer-events: none;
     background-color: @white;
     transition: opacity @navbar-transition-time;
     opacity: 0.4;
